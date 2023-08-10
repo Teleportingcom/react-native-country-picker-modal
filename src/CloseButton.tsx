@@ -23,7 +23,6 @@ const styles = StyleSheet.create({
   imageStyle: {
     height: 25,
     width: 25,
-    resizeMode: 'contain'
   }
 })
 
@@ -55,7 +54,7 @@ const CloseButtonAndroid = (props: CloseButtonProps) => {
             source={closeImage}
             style={[
               styles.imageStyle,
-              props.imageStyle,
+              // props.imageStyle,
             ]}
           />
         </View>
@@ -77,7 +76,7 @@ const CloseButtonIOS = (props: CloseButtonProps) => {
           source={closeImage}
           style={[
             styles.imageStyle,
-            props.imageStyle,
+            // props.imageStyle,
           ]}
         />
       </TouchableOpacity>
