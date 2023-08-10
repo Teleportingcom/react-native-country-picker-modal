@@ -11,7 +11,7 @@ import CloseButton from './CloseButton'
 
 const styles = StyleSheet.create({
   separator: {
-    height: 40,
+    height: 30,
   },
 })
 
