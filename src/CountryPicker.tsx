@@ -193,7 +193,7 @@ export const CountryPicker = (props: CountryPickerProps) => {
         onRequestClose={onClose}
         onDismiss={onClose}
       >
-        <View style={{paddingHorizontal: 24}}>
+        <View style={{flex: 1, paddingHorizontal: 24}}>
           <HeaderModal
             {...{
               withFilter,
