@@ -14,15 +14,10 @@ import {
 import PropTypes from 'prop-types'
 
 const styles = StyleSheet.create({
-  container: {
-    height: 48,
-    width: '15%',
-    alignItems: 'center',
-    justifyContent: 'center'
-  },
   imageStyle: {
     height: 32,
     width: 32,
+    marginTop: 8,
   }
 })
 
@@ -40,7 +35,7 @@ const CloseButtonAndroid = (props: CloseButtonProps) => {
     closeImage = props.image
   }
   return (
-    <View style={[styles.container, props.style]}>
+    <View style={props.style}>
       <TouchableNativeFeedback
         background={
           Platform.Version < 21
@@ -70,7 +65,7 @@ const CloseButtonIOS = (props: CloseButtonProps) => {
     closeImage = props.image
   }
   return (
-    <View style={[styles.container, props.style]}>
+    <View style={props.style}>
       <TouchableOpacity onPress={props.onPress}>
         <Image
           source={closeImage}

@@ -13,7 +13,6 @@ const styles = StyleSheet.create({
       lineHeight: 18,
       includeFontPadding: false,
       color: '#fff',
-      marginHorizontal: 24,
       marginBottom: 20,
   },
 })

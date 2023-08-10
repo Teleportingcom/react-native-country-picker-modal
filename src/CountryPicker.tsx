@@ -6,6 +6,7 @@ import {
   ViewStyle,
   ImageSourcePropType,
   ImageStyle,
+  View,
 } from 'react-native'
 import { CountryModal } from './CountryModal'
 import { HeaderModal } from './HeaderModal'
@@ -192,43 +193,45 @@ export const CountryPicker = (props: CountryPickerProps) => {
         onRequestClose={onClose}
         onDismiss={onClose}
       >
-        <HeaderModal
-          {...{
-            withFilter,
-            onClose,
-            closeButtonImage,
-            closeButtonImageStyle,
-            closeButtonStyle,
-            withCloseButton,
-          }}
-          renderFilter={(props: CountryFilter['props']) =>
-            renderFilter({
-              ...props,
-              allowFontScaling,
-              renderCountryFilter,
-              onChangeText: setFilter,
-              value: filter,
-              onFocus,
-              onBlur,
-              ...filterProps,
-            })
-          }
-        />
-        <CountryList
-          {...{
-            onSelect: onSelectClose,
-            data: countries,
-            letters: [],
-            withAlphaFilter: withAlphaFilter && filter === '',
-            withCallingCode,
-            withCurrency,
-            withFlag,
-            withEmoji,
-            filter,
-            filterFocus,
-            flatListProps,
-          }}
-        />
+        <View style={{paddingHorizontal: 24}}>
+          <HeaderModal
+            {...{
+              withFilter,
+              onClose,
+              closeButtonImage,
+              closeButtonImageStyle,
+              closeButtonStyle,
+              withCloseButton,
+            }}
+            renderFilter={(props: CountryFilter['props']) =>
+              renderFilter({
+                ...props,
+                allowFontScaling,
+                renderCountryFilter,
+                onChangeText: setFilter,
+                value: filter,
+                onFocus,
+                onBlur,
+                ...filterProps,
+              })
+            }
+          />
+          <CountryList
+            {...{
+              onSelect: onSelectClose,
+              data: countries,
+              letters: [],
+              withAlphaFilter: withAlphaFilter && filter === '',
+              withCallingCode,
+              withCurrency,
+              withFlag,
+              withEmoji,
+              filter,
+              filterFocus,
+              flatListProps,
+            }}
+          />
+        </View>
       </CountryModal>
     </>
   )
