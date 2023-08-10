@@ -1,18 +1,19 @@
 import React from 'react'
-import { TextInput, StyleSheet, TextInputProps, Platform } from 'react-native'
+import { TextInput, StyleSheet, TextInputProps } from 'react-native'
 import { useTheme } from './CountryTheme'
 
 const styles = StyleSheet.create({
   input: {
-    height: 48,
-    width: '70%',
-    ...Platform.select({
-      web: {
-        outlineWidth: 0,
-        outlineColor: 'transparent',
-        outlineOffset: 0,
-      },
-    }),
+    flexGrow: 1,
+      height: 56,
+      borderRadius: 12,
+      backgroundColor: 'rgba(255, 255, 255, 0.16)',
+      paddingHorizontal: 16,
+      fontSize: 14,
+      lineHeight: 18,
+      includeFontPadding: false,
+      color: '#fff',
+      marginHorizontal: 24,
   },
 })
 

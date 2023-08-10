@@ -12,7 +12,6 @@ import {
   StyleSheet
 } from 'react-native'
 import PropTypes from 'prop-types'
-import { useTheme } from './CountryTheme'
 
 const styles = StyleSheet.create({
   container: {
@@ -36,12 +35,11 @@ interface CloseButtonProps {
 }
 
 const CloseButtonAndroid = (props: CloseButtonProps) => {
-  let closeImage = require('./assets/images/close.android.png')
+  let closeImage = require('./assets/images/close.png')
 
   if (props.image) {
     closeImage = props.image
   }
-  const { onBackgroundTextColor } = useTheme()
   return (
     <View style={[styles.container, props.style]}>
       <TouchableNativeFeedback
@@ -58,7 +56,6 @@ const CloseButtonAndroid = (props: CloseButtonProps) => {
             style={[
               styles.imageStyle,
               props.imageStyle,
-              { tintColor: onBackgroundTextColor }
             ]}
           />
         </View>
@@ -68,12 +65,11 @@ const CloseButtonAndroid = (props: CloseButtonProps) => {
 }
 
 const CloseButtonIOS = (props: CloseButtonProps) => {
-  let closeImage = require('./assets/images/close.ios.png')
+  let closeImage = require('./assets/images/close.png')
 
   if (props.image) {
     closeImage = props.image
   }
-  const { onBackgroundTextColor } = useTheme()
   return (
     <View style={[styles.container, props.style]}>
       <TouchableOpacity onPress={props.onPress}>
@@ -82,7 +78,6 @@ const CloseButtonIOS = (props: CloseButtonProps) => {
           style={[
             styles.imageStyle,
             props.imageStyle,
-            { tintColor: onBackgroundTextColor }
           ]}
         />
       </TouchableOpacity>

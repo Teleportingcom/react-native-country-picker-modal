@@ -10,10 +10,9 @@ import {
 import CloseButton from './CloseButton'
 
 const styles = StyleSheet.create({
-  container: {
-    flexDirection: 'row',
-    alignItems: 'center'
-  }
+  separator: {
+    height: 40,
+  },
 })
 
 interface HeaderModalProps {
@@ -36,13 +35,14 @@ export const HeaderModal = (props: HeaderModalProps) => {
     renderFilter
   } = props
   return (
-    <View style={styles.container}>
+    <View>
       {withCloseButton && <CloseButton
         image={closeButtonImage}
         style={closeButtonStyle}
         imageStyle={closeButtonImageStyle}
         onPress={onClose}
       />}
+      <View style={styles.separator} />
       {withFilter && renderFilter(props)}
     </View>
   )
